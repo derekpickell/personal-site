@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Derek Pickell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: futura-pt;
+            color: white;
+            text-align: center;
+
+            /* Background image */
+            background-image: url("assets/background.png"); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transform: translateY(-5vh);
+        }
+
+        h1 {
+            font-family: "futura-pt", Futura, Arial, sans-serif;
+            font-size: 110px;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 110px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 110px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        a.button:focus,
+        a.button:active {
+            outline: none;
+        }
+
+
+        a.button {
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            padding: 0;
+
+            font-family: "futura-pt", Futura, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+
+            color: rgb(255, 255, 255);
+            transition: color 0.3s ease;
+        }
+
+        a.button:hover {
+            color: rgba(0, 0, 0, 0.45);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Derek Pickell</h1>
+
+    <div class="button-container">
+        <a href="assets/Pickell_Academic_CV2601.pdf" class="button">CV</a>
+        <a href="https://github.com/glaciology/ogre" class="button">Projects</a>
+        <a href="https://www.instagram.com/derekpickell/" class="button">Photography</a>
+    </div>
+
+</body>
+</html>
