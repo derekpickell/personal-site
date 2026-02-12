@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects | Derek Pickell</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: futura-pt;
+    background-color: white;
+    color: black;
+    text-align: center;
+    position: relative; /* for absolute children */
+}
+
+/* Header pinned near top */
+.site-header {
+    margin-top: 20px;
+}
+
+/* Centers Projects + buttons */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;
+    padding-bottom: 10vh;
+    height: 90vh;
+}
+
+h1 {
+    font-family: "futura-pt", Futura, Arial, sans-serif;
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 110px;
+    margin-bottom: 110px;
+}
+
+a {
+    text-decoration: none;
+    font-family: "futura-pt", Futura, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgba(0,0,0,0.4);
+}
+
+/* -----------------------------
+   Unified preview box style
+----------------------------- */
+.preview-box {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    border: none;
+    overflow: hidden;
+    display: block;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Positioning */
+.top-left { top: 30px; left: 20px; }
+.bottom-left { bottom: 40px; left: 20px; }
+.top-right { top: 30px; right: 20px; }
+.bottom-right { bottom: 40px; right: 20px; }
+
+/* Content inside preview box */
+.preview-box iframe,
+.preview-box img {
+    width: 95%;
+    height: 95%;
+    display: block;
+}
+
+/* Scale iframe for top-right map */
+.top-right iframe {
+    width: 1200px;
+    height: 800px;
+    transform: scale(0.33);
+    transform-origin: top left;
+    pointer-events: none;
+    border: none;
+}
+
+/* Overlay text */
+.preview-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: black;
+    background: rgba(255, 255, 255, 0);
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect */
+.preview-box:hover .preview-overlay {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* SVG lines container */
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Mobile / vertical screens */
+@media (max-width: 1200px) {
+    /* Remove SVG lines on mobile or hide */
+    .connection-lines {
+        display: none;
+    }
+}
+
+/* Mobile / vertical screens */
+/* Mobile / vertical screens */
+@media (max-width: 850px) {
+    .main-content {
+        height: auto;                 /* let it expand naturally */
+        padding: 20px 10px;           /* small top/bottom padding */
+        justify-content: flex-start;  /* align content to top, not center */
+        align-items: center;          /* keep centered horizontally */
+    }
+
+    .preview-box {
+        position: relative;       /* flow naturally under Projects */
+        width: 80%;               /* nearly full width */
+        max-width: 400px;         /* optional cap */
+        height: 200px;            /* or auto for images */
+        margin: 20px auto;        /* vertical spacing + center horizontally */
+        border: 1px solid #ccc;   /* optional border */
+    }
+
+    /* iframe scales to box */
+    .top-right iframe {
+        width: 100%;
+        height: 100%;
+        transform: none;          /* remove desktop scale */
+        pointer-events: auto;
+    }
+
+    /* image inside box scales */
+    .preview-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* shrink Projects title */
+    h1 {
+        font-size: 50px;       /* smaller font */
+        line-height: 60px;     /* tighter line spacing */
+        margin-bottom: 20px;   /* reduce gap below title */
+    }
+
+    .main-content p {
+        margin-bottom: 0px;
+    }
+
+    /* hide SVG lines */
+    .connection-lines {
+        display: none;
+    }
+
+    /* Remove absolute offsets for all corner classes */
+    .top-left, .bottom-left, .top-right, .bottom-right {
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="site-header">
+    <a href="index.html">Derek Pickell</a>
+</div>
+
+<div class="main-content">
+    <h1>Projects</h1>
+    <p>
+        <a href="https://github.com/glaciology/ogre">GITHUB | </a>
+        <a href="https://scholar.google.com/citations?user=YtuZ7wYAAAAJ&hl=en&oi=ao">SCHOLAR</a>
+    </p>
+</div>
+
+<!-- Unified preview boxes -->
+<a href="https://derek-pickell.squarespace.com/earth" class="preview-box top-left" target="_blank">
+    <img src="assets/Greenland.png" alt="GreenlandMap">
+    <div class="preview-overlay">Remote Sensing</div>
+</a>
+
+<a href="https://github.com/derekpickell" class="preview-box bottom-left" target="_blank">
+    <img src="assets/computation.png" alt="Computation">
+    <div class="preview-overlay">Computation + Methodology</div>
+</a>
+
+<a href="map.html" class="preview-box top-right">
+    <iframe src="https://derekpickell.github.io/ogre-map/" loading="lazy"></iframe>
+    <div class="preview-overlay">World Map</div>
+</a>
+
+<a href="https://github.com/glaciology" class="preview-box bottom-right" target="_blank">
+    <img src="assets/OGRE.png" alt="OGRE">
+    <div class="preview-overlay">Open GNSS Research Equipment</div>
+</a>
+
+<!-- SVG lines -->
+<svg class="connection-lines">
+    <line id="line-tl" stroke="black" stroke-width="1" />
+    <line id="line-bl" stroke="black" stroke-width="1" />
+    <line id="line-tr" stroke="black" stroke-width="1" />
+    <line id="line-br" stroke="black" stroke-width="1" />
+</svg>
+
+<script>
+// Connect lines from bottom center of Projects title to inner corner of each box
+function drawLines() {
+    const projects = document.querySelector('.main-content h1').getBoundingClientRect();
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+
+    const h1Top = projects.top + scrollY;
+    const h1Bottom = projects.bottom + scrollY;
+    const h1Left = projects.left + scrollX;
+    const h1Right = projects.right + scrollX;
+
+    const boxes = [
+        { 
+            el: document.querySelector('.top-left'), 
+            line: document.getElementById('line-tl'), 
+            x1: h1Left - 10, // start slightly left
+            y1: h1Top - 10,  // above Projects
+            x2: null,         // will calculate custom
+            y2: null
+        },
+        { 
+            el: document.querySelector('.bottom-left'), 
+            line: document.getElementById('line-bl'), 
+            x1: h1Left - 20, 
+            y1: h1Bottom + 10, 
+            x2: null,
+            y2: null
+        },
+        { 
+            el: document.querySelector('.top-right'), 
+            line: document.getElementById('line-tr'), 
+            x1: h1Right - 10, // closer to "t" in Projects
+            y1: h1Top - 10,   
+            x2: null,
+            y2: null
+        },
+        { 
+            el: document.querySelector('.bottom-right'), 
+            line: document.getElementById('line-br'), 
+            x1: h1Right - 20, 
+            y1: h1Bottom + 10, 
+            x2: null,
+            y2: null
+        }
+    ];
+
+    // Compute custom x2/y2 for each box
+    boxes.forEach(b => {
+        const rect = b.el.getBoundingClientRect();
+        // Customize the line to meet a specific inner point of the box
+        if (b.el.classList.contains('top-left')) {
+            b.x2 = rect.right - 50 + scrollX; // inner right
+            b.y2 = rect.bottom - 110 + scrollY; // inner bottom
+        } else if (b.el.classList.contains('bottom-left')) {
+            b.x2 = rect.right - 50 + scrollX;
+            b.y2 = rect.top -30 + scrollY;
+        } else if (b.el.classList.contains('top-right')) {
+            b.x2 = rect.left + 50 + scrollX;
+            b.y2 = rect.bottom - 110 + scrollY;
+        } else if (b.el.classList.contains('bottom-right')) {
+            b.x2 = rect.left + 60 + scrollX;
+            b.y2 = rect.top -30 + scrollY;
+        }
+
+        // Apply the coordinates to the SVG line
+        b.line.setAttribute('x1', b.x1);
+        b.line.setAttribute('y1', b.y1);
+        b.line.setAttribute('x2', b.x2);
+        b.line.setAttribute('y2', b.y2);
+    });
+}
+
+// Initial draw
+drawLines();
+window.addEventListener('resize', drawLines);
+window.addEventListener('scroll', drawLines);
+
+</script>
+
+</body>
+</html>
