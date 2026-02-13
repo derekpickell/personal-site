@@ -115,6 +115,10 @@ a:hover {
     background: rgba(255, 255, 255, 0.85);
 }
 
+.separator {
+    margin: 0 10px; /* space on left and right of "|" */
+}
+
 /* SVG lines container */
 .connection-lines {
     position: absolute;
@@ -206,8 +210,9 @@ a:hover {
 <div class="main-content">
     <h1>Projects</h1>
     <p>
-        <a href="https://github.com/glaciology/ogre">GITHUB | </a>
-        <a href="https://scholar.google.com/citations?user=YtuZ7wYAAAAJ&hl=en&oi=ao">SCHOLAR</a>
+        <a href="https://github.com/glaciology/ogre">GITHUB </a>
+        <span class="separator">|</span>
+        <a href="https://scholar.google.com/citations?user=YtuZ7wYAAAAJ&hl=en&oi=ao"> SCHOLAR </a>
     </p>
 </div>
 
@@ -223,13 +228,13 @@ a:hover {
 </a>
 
 <a href="map.html" class="preview-box top-right">
-    <iframe src="https://derekpickell.github.io/ogre-map/" loading="lazy"></iframe>
-    <div class="preview-overlay">World Map</div>
+    <img src="assets/map.png" alt="Computation">
+    <div class="preview-overlay">Global Impact: World Map</div>
 </a>
 
-<a href="https://github.com/glaciology" class="preview-box bottom-right" target="_blank">
+<a href="https://github.com/glaciology/OGRE" class="preview-box bottom-right" target="_blank">
     <img src="assets/OGRE.png" alt="OGRE">
-    <div class="preview-overlay">Open GNSS Research Equipment</div>
+    <div class="preview-overlay">GNSS Instrument Design: OGREs</div>
 </a>
 
 <!-- SVG lines -->
@@ -301,7 +306,7 @@ function drawLines() {
             b.x2 = rect.left + 50 + scrollX;
             b.y2 = rect.bottom - 110 + scrollY;
         } else if (b.el.classList.contains('bottom-right')) {
-            b.x2 = rect.left + 60 + scrollX;
+            b.x2 = rect.left + 50 + scrollX;
             b.y2 = rect.top -30 + scrollY;
         }
 
